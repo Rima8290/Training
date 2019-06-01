@@ -1,0 +1,23 @@
+package com.lti.training.day2.java;
+
+public class Custadd {
+		
+	public static void main(String[] args) {
+		 
+		 Customer c1=new Customer();
+		 
+		 //p1.setPassportNo("1245");
+		 c1.setName("Riya");
+		 c1.setEmail("riya@email.com");
+		 System.out.println("the name of the customer is:"+ c1.getName());
+		 System.out.println("the email of the customer is:"+ c1.getEmail());
+		 Address add=new Address();
+		 c1.setAddress(add);
+		 add.setCity("Udaipur");
+		 add.setState("Rajasthan");
+		 add.setPincode(313001);
+		 System.out.println("the address of the customer is: city:"+add.getCity()+" state is: "+add.getState()+" pincode is:"+add.getPincode());//System.out.println(p1.getName());
+	}
+
+
+}
