@@ -1,0 +1,21 @@
+package com.lti.training.day2.java;
+
+public class String_1{
+public static void main(String args[]){
+	/* String str ="abcjhnggy";   
+     char a=str.charAt(4);
+	String c=str.toUpperCase();
+	System.out.println(c);
+	System.out.println(a);
+*/
+	int a=65;
+	String bin= Integer.toBinaryString(a);
+	String hex=Integer.toHexString(a);
+	String oct=Integer.toOctalString(a);
+	System.out.println(bin);
+	System.out.println(hex);
+	System.out.println(oct);
+	
+	
+}	
+}
