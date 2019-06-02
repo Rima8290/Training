@@ -1,0 +1,30 @@
+ans1.    Association is relation between two separate classes which establishes through their Objects. Association can be one-to-one, one-to-many, many-to-one, many-to-many.
+In Object-Oriented programming, an Object communicates to other Object to use functionality and services provided by that object. Composition and Aggregation are the two forms of association.
+Aggregation
+Aggregation in Java is a special type of association.
+A has-A relationship is represented here.
+It is a one-way relationship, i.e. a unidirectional relationship.
+Ending one entity won’t affect another, both can be present independently.
+
+Composition
+This is a restricted form of Java aggregation that is the quantities are highly dependent on each other. Java composition represents a part-of relationship. One entity cannot exist without the other.
+
+
+ans2.  Bidirectional relationship
+ each entity has a relationship field or property that refers to the other entity. Through the relationship field or property, an entity class’s code can access its related object. If an entity has a related field, the entity is said to “know” about its related object. For example, if Order knows what LineItem instances it has and if LineItem knows what Order it belongs to, they have a bidirectional relationship.
+
+Unidirectional relationship 
+ only one entity has a relationship field or property that refers to the other. For example, LineItem would have a relationship field that identifies Product, but Product would not have a relationship field or property for LineItem. In other words, LineItem knows about Product, but Product doesn’t know which LineItem instances refer to it.
+
+
+ans3. In Java, we can reuse our code using an Is-A relationship or using a Has-A relationship. An Is-A relationship is also known as inheritance and a Has-A relationship is also known as composition in Java.
+Is-A relationship
+In Java, an Is-A relationship depends on inheritance. Further inheritance is of two types, class inheritance and interface inheritance. It is used for code reusability in Java. We can easily determine an Is-A relationship in Java. When there is an extends or implement keyword in the class declaration in Java, then the specific class is said to be following the Is-A relationship.
+
+Has-A relationship
+In Java, a Has-A relationship is also known as composition. It is also used for code reusability in Java. In Java, a Has-A relationship simply means that an instance of one class has a reference to an instance of another class or an other instance of the same class.  We mostly use new keywords to implement a Has-A relationship in Java.
+
+
+ans4. 
+
+
