@@ -1,0 +1,22 @@
+package com.lti.training.day3.version3;
+
+public class App {
+	
+	  public static void main(String[] args) {
+		  // testing our logger
+		 //Console
+		/* Console_logger l= new Console_logger();
+		 l.log("App Started Successfully"); // overloading
+		  l.log("Some Message",LogLevel.INFO);
+		  l.log("Again Some Message",LogLevel.WARNING);
+		  l.log("Some Critical Message",LogLevel.ERROR); */
+		  //File
+		 Logger l=  LogFactory.getLoggerInstance();//----------Abstraction
+		  l.log("App Started Successfully"); // ------------------------overloading
+		  l.log("Some Message",LogLevel.INFO);
+		  l.log("Again Some Message",LogLevel.WARNING);
+		  l.log("Some Critical Message",LogLevel.ERROR);
+
+	}
+
+}
