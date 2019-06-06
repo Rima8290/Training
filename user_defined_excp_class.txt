@@ -1,0 +1,14 @@
+package com.lti.Day_4;
+
+
+//public class AccountException extends RunException
+public class AccountException extends Exception{
+
+	public AccountException(String message) {
+		// TODO Auto-generated constructor stub
+		super(message);
+		
+	}
+	
+          
+}
