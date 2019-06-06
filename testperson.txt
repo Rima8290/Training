@@ -1,0 +1,27 @@
+package com.lti.Day_5;
+//----------------------------Output is "hashcode"
+public class TextPerson {
+	
+       public static void main(String args[]) {
+    	        Person obj  =  new Person( 21,"rima");
+    	        System.out.println(obj);
+                
+    	        Person obj1  =  new Person( 21,"rima");
+    	        System.out.println(obj1==obj);             //comparing the reference of both objects  therefore false output
+    	         System.out.println(obj.equals(obj1 ));    //---------------value comparision works only if overriden                                                           
+    	         System.out.println(obj. hashCode());
+    	         System.out.println(obj1.hashCode());
+    	         
+    	         try {
+					Person p3= (Person) obj.clone();
+					System.out.println(p3);
+				} catch (CloneNotSupportedException e) {
+					
+					e.printStackTrace();
+				}
+    	         
+    	         obj=null;
+    	         obj1=null;
+    	         System.gc();    //dont use in projects(garbage collection)
+       }
+}
