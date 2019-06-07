@@ -1,0 +1,33 @@
+package com.lti.Day_6;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserManager {
+
+	  private static final String Users = null;
+	  private List<User> users;
+       public UserManager() {
+	           users = new ArrayList<User>();
+	           users.add(new User("Rima", "123",false));
+	           users.add(new User("Riya", "243",true));
+	           users.add(new User("Jerry", "2453",true));
+       }
+       public boolean isValid(String username, String password) {
+    	   
+    	   for(User user : users) //User class name 
+    	   if(user.getUsername().equals(username) && (user.getPassword().equals(password))&&
+    	     user.isActive ()) {
+    	       return true;
+    }
+              return false;
+}	   
+       public static void main(String[] args) {
+		UserManager mgr = new UserManager();
+		boolean isValid = mgr.isValid("Jerry", "2223");
+		System.out.println(isValid);
+		
+	}
+
+}
+

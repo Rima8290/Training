@@ -1,0 +1,61 @@
+package com.lti.Day_6;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ExampleOnjavaList {
+  
+	    public static void main(String[] args) {
+			
+	    	 List<String> list1 = new ArrayList<String>(); //arraylist
+	    	// List<String> list1 = new LinkedList<String>(); //linkedlist 
+	    	 list1.add("Java");
+	    	 list1.add(".Net");
+	    	 list1.add("Oracle");
+	    	 list1.add("OOPs");
+	    	 list1.add("Java");
+	    	 
+	    	 List<String> list2 = new ArrayList<String>();
+	    	 list2.add("AI/ML");
+	    	 list2.add("Analytics");
+	    	 
+	    	/* 
+	    	 for(int i=0;i<list1.size();i++) {
+	    		 String str = list1.get(i);
+	    		 System.out.println(str);      //for loop
+	    	 }
+	    	
+	    	 for(String str: list1) {
+	    		 System.out.println(str);    //for each loop
+	    	 }	 
+	    		 
+	    	list1.forEach(str -> System.out.println(str));         //lambda style of foreach loop
+	    
+	    	}
+*/     
+	    list1.addAll(list2);
+	    	 
+	    List<String> list3 = list1.subList(1, 4);
+	    
+	    System.out.println("Sublist Result"); 
+	    
+	    list3.forEach(str-> System.out.println(list3));
+	    
+		System.out.println(list1.subList(1, 4));	//---------sublist
+		
+		System.out.println(list1.retainAll(list2));//---------to retain
+		
+		System.out.println(list1.removeAll(list2));//------to remove
+	    
+	     
+	    //  ------------------------------------Stroing Objects of some user userdefined class
+	    List<EmployeeArr> listOfEmployee= new ArrayList<EmployeeArr>();
+	   
+	   listOfEmployee.add(new EmployeeArr("Rima" , 20981 ) );
+	   listOfEmployee.add(new EmployeeArr("Riya" , 23456 ) );
+	   
+	    for(EmployeeArr b : listOfEmployee)
+	    	System.out.println(b);
+	   }
+	   
+ }

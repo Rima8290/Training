@@ -1,0 +1,32 @@
+package com.lti.Day_6;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class ExampleOnSet {
+	
+	   public static void main(String[] args) {
+		   Set<String> set1 = new HashSet<String>();
+		     set1.add(".Net");
+	    	 set1.add("Oracle");
+	    	 set1.add("OOPs");
+	    	 set1.add("Java");
+	    	 set1.add("Java");
+	    	 
+	    	 for(String str : set1)
+	    		 System.out.println(str);
+	    	 
+	    	 Set<EmployeeArr> setOfEmployee= new HashSet<EmployeeArr>();
+	  	   
+	  	   setOfEmployee.add(new EmployeeArr("Rima" , 20981 ) );
+	  	   setOfEmployee.add(new EmployeeArr("Riya" , 23456 ) );
+	  	 setOfEmployee.add(new EmployeeArr("Riya" , 23456 ) );
+	  	   
+	  	    for(EmployeeArr b : setOfEmployee)
+	  	    	System.out.println(b);
+		    
+	}
+
+}
