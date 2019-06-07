@@ -1,0 +1,57 @@
+package com.lti.Day_6;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.TreeSet;
+
+public class ExampleOnSorting {
+     
+	   public static void main(String[] args) {
+		
+		   List<Integer> list1 = new ArrayList<Integer>();
+		   list1.add(10);
+		   list1.add(30);
+		   list1.add(50);
+		   list1.add(20);
+		   list1.add(40);
+		   
+		   System.out.println("--------Before Sorting----------------");
+		   for(Integer no : list1)
+			   System.out.println(no);
+		   
+		   TreeSet<Integer> tr = new TreeSet<Integer>(list1);
+		   System.out.println("--------After Sorting----------------");
+		   for(Integer no : tr)
+			   System.out.println(no);
+		   
+		   
+		  
+		   
+		   //sort data in case of user defined objects in a collection
+		   List<Employee> listOfEmployee = new ArrayList<Employee>();
+		   listOfEmployee.add(new Employee("Mikky", 99));
+		   listOfEmployee.add(new Employee("Tom",29));
+		   listOfEmployee.add(new Employee("Pluto",67));
+		   listOfEmployee.add(new Employee("Jerry",67));
+	       listOfEmployee.add(new Employee("John",67));
+	       
+	       Comparator<Employee> e = new Comparator<Employee>() {
+
+			@Override
+			public int compare(Employee o1, Employee o2) {
+			
+				return o1.getName().compareTo(o2.getName());
+			}
+	       };   
+	       
+	      
+	      Collections.sort(listOfEmployee,e);
+		  // System.out.println("--------After Sorting  ( Using sort method)----------------");
+		   for(Employee e1 : listOfEmployee)
+			   System.out.println(e1);
+		   
+	   }       
+          
+}
