@@ -1,0 +1,78 @@
+package com.lti.Day_6;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.TreeSet;
+
+public class ExampleOnSorting {
+     
+	   public static void main(String[] args) {
+		
+		   List<Integer> list1 = new ArrayList<Integer>();
+		   list1.add(10);
+		   list1.add(30);
+		   list1.add(50);
+		   list1.add(20);
+		   list1.add(40);
+		   
+		   System.out.println("--------Before Sorting----------------");
+		   for(Integer no : list1)
+			   System.out.println(no);
+		   
+		   TreeSet<Integer> tr = new TreeSet<Integer>(list1);
+		   System.out.println("--------After Sorting----------------");
+		   for(Integer no : tr)
+			   System.out.println(no);
+		   
+		   
+		  
+		   
+		   //sort data in case of user defined objects in a collection
+		   List<Employee> listOfEmployee = new ArrayList<Employee>();
+		   listOfEmployee.add(new Employee("Mikky", 99));
+		   listOfEmployee.add(new Employee("Tom",29));
+		   listOfEmployee.add(new Employee("Pluto",67));
+		   listOfEmployee.add(new Employee("Jerry",67));
+	       listOfEmployee.add(new Employee("John",67));
+	       
+	       Comparator<Employee> e = new Comparator<Employee>() {
+
+			@Override
+			public int compare(Employee o1, Employee o2) {
+			
+				return o1.getName().compareTo(o2.getName()); //'-' is for descending order
+			}
+	       };   
+	       
+	       Comparator<Employee> e2 = new Comparator<Employee>() {
+
+				@Override
+				public int compare(Employee o1, Employee o2) {
+				
+					return o1.getId() - (o2.getId()); //'-' is for ascending order
+				}
+		       };   
+		       
+		       //Using lambda!!!!!!!!!!!(descending order)
+		       Comparator<Employee> e3 = (o1,o2) ->o2.getId() - o1.getId();
+		      // Comparator<Employee> b3 = (o1,o2) ->o1.getName().compareTo(o2.getName();------string comparision
+		       
+		       Collections.sort(listOfEmployee,e3);
+				  // System.out.println("--------After Sorting  ( Using sort method)----------------");
+				   for(Employee e4 : listOfEmployee)
+					   System.out.println(e4);
+				   
+			  
+ 		       
+		       
+		       
+	      Collections.sort(listOfEmployee,e2);
+		  // System.out.println("--------After Sorting  ( Using sort method)----------------");
+		   for(Employee e1 : listOfEmployee)
+			   System.out.println(e1);
+		   
+	   }       
+          
+}
