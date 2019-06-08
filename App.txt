@@ -1,0 +1,26 @@
+package com.lti.Day_7;
+
+import java.util.List;
+
+public class App {
+	
+	 public static void main(String[] args) {
+		 ProductDao dao = new  ProductDao();
+		/* 
+		 Product p = new Product();
+		 p.setId(1);
+		 p.setName("Samsung 6789900");
+		 p.setPrice(76543);
+		 p.setQuantity(78);
+		 
+		 //dao.add(p);*/
+		 List<Product> products = dao.fetchAll();
+		 
+		 for( Product p1 : products) {
+			  System.out.println("ID= "+ p1.getId()+"\n"+"Name:"+
+		            p1.getName()+"\n"+"Price:"+p1.getPrice()+"\n"+"Quantity"+p1.getQuantity());
+			//dao.fetchAll(p1);
+	}
+		 }
+
+}
