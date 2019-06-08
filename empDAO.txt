@@ -1,0 +1,122 @@
+package com.lti.MinoProj;
+
+import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class EmployeeDao {
+
+	public void add(Employee employee) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521:XE";
+			String user = "hr";
+			String pass = "hr";
+			conn = DriverManager.getConnection(url, user, pass);
+			
+			//  System.out.println("Connected succesfully..........");
+			
+			String sql = "insert into Employee VALUES(?,?,?,?,?)";
+			stmt = conn.prepareStatement(sql);
+
+			stmt.setInt(1, employee.getEid());
+			stmt.setString(2, employee.getFname());
+			stmt.setString(3, employee.getLname());
+			stmt.setString(4, employee.getDoj());
+			stmt.setString(5, employee.getDept());
+
+			stmt.executeUpdate();
+			
+		
+ 	   }
+ 	   catch(ClassNotFoundException ex1) {
+ 		     System.out.println("JDBC driver not found");
+ 		     
+ 	   }
+ 	   catch(SQLException ex1) {
+ 		   ex1.printStackTrace( );
+ 	   }
+ 	   finally {
+ 		        try {  conn.close( );}   catch(Exception ex1)  {    }
+ 	   }
+	}
+	   
+	
+
+	public List<Employee> fetchAll() {
+		   Connection conn = null; //manage the conn between the app and the db
+		   PreparedStatement stmt = null; // helps to execute the sql stmts
+		   ResultSet rs = null;//helps us to fetch the result of a select query
+	   
+		   
+		   try {
+			   Employee employee = new Employee(); //
+			   
+			   Class.forName("oracle.jdbc.driver.OracleDriver");
+			   String url = "jdbc:oracle:thin:@localhost:1521:XE";
+			   String user = "hr";
+			   String pass = "hr";
+			   conn = DriverManager.getConnection(url,user,pass);
+			
+			   String sql = "select * from Employee ";
+			   stmt = conn.prepareStatement(sql);
+			   
+			   stmt.setInt(1, 10);
+			stmt.setString(2, employee.getFname());
+			   stmt.setString(3, employee.getLname());
+			   stmt.setString(4, employee.getDoj());
+			   stmt.setString(4, employee.getDept());
+			 
+			   rs = stmt.executeQuery();		   
+			   List<Employee> employee1= new ArrayList<Employee>();
+			   while(rs.next()) {
+				    Employee e = new Employee();
+				    e.setEid(rs.getInt(1));
+				    e.setFname(rs.getString(2));
+				    e.setLname(rs.getString(3));
+				    e.setDoj(rs.getString(4));
+				    e.setDept(rs.getString(5));
+				    employee1.add(e);
+			   }
+			   return employee1;
+			
+		   }
+	
+		   catch(ClassNotFoundException ex1) {
+			     System.out.println("JDBC driver not found");
+			     
+		   }
+		   catch(SQLException ex1) {
+			   ex1.printStackTrace( );
+		   }
+		   finally {
+			        try {  conn.close( );}   catch(Exception ex1)  {    }
+		   }
+		   return null;
+		   }
+
+			  
+	 }   
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+			

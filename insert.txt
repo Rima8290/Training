@@ -1,0 +1,30 @@
+package com.lti.MinoProj;
+
+import java.awt.List;
+
+public class Insert {
+	
+	public static void main(String[] args) {
+		
+		 EmployeeDao dao = new  EmployeeDao();
+			
+	     Employee e = new Employee();
+			
+			 e.setEid(54);
+			 e.setFname("R");
+			 e.setLname("Sneha");
+			 e.setDoj("21-05-2019");
+			 e.setDept("Developeme");
+			 
+			 dao.add(e);
+			 
+		
+			
+	    
+			 }
+
+	
+
+	}
+	
+

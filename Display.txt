@@ -1,0 +1,20 @@
+package com.lti.MinoProj;
+
+import java.util.List;
+
+public class Display {
+	
+	public static void main(String[] args) {
+		
+		 EmployeeDao dao = new  EmployeeDao();
+			
+	     Employee e = new Employee();
+	
+	 List<Employee> employee = dao.fetchAll();
+	 
+	 for( Employee emp : employee ) {
+		  System.out.println("Id: "+ emp.getEid()+"\n"+"Name:"+ emp.getFname()+ emp.getLname() +"\n"+"Date of Joining:"+"\n"+emp.getDoj()+"\n"+"Department: "+emp.getDept());
+		       dao.fetchAll();
+}
+	}
+}
