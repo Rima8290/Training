@@ -1,0 +1,69 @@
+package lti.training.day7.miniproject;
+
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class StudentApp {
+	public static void main(String[] args) {
+		
+		StudentDao dao= new StudentDao();
+		
+		
+		Student s=new Student();
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Enter Student roll number: ");
+		s.setRollno(sc.nextInt());
+		
+		System.out.println("Enter First name of the student: ");
+		s.setFname(sc.nextLine());
+
+		System.out.println("Enter Last name of the student: ");
+		s.setLname(sc.nextLine());
+
+		System.out.println("Enter course of the student: ");
+		s.setCourse(sc.nextLine());
+
+		System.out.println("Enter result of the student: ");
+		s.setResult(sc.nextLine());
+		
+		dao.add(s);
+		
+		
+		
+		
+	/*	s1.setRollno(1);
+	        s1.setFname("Riya");
+                s1.setLname("Jain");
+		s1.setCourse("java");
+		s1.setREsult("Pass");
+		
+		dao.add(s1);
+		System.out.println("Data Inserted"); 
+		*/
+		
+		List<Student> student = dao.fetchAll();
+		try {
+		
+		for (Student s : student) {
+			System.out.println("RollNo = " + s.getRollno());
+			System.out.println("First Name = " + s.getFname());
+			System.out.println("Last Name = " + s.getLname());
+			System.out.println("Course = " + s.getCourse());
+			System.out.println("Result = " + s.getResult());
+		}
+		}
+		catch (NullPointerException e ) {
+			// TODO: handle exception
+		
+		}
+
+	} 
+
+}
+
+
+
